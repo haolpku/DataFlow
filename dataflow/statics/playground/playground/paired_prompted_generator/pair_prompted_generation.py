@@ -1,5 +1,5 @@
 from dataflow.operators.core_text import PairedPromptedGenerator
-from dataflow.serving import LocalModelLLMServing, APILLMServing_request
+from dataflow.serving import APILLMServing_request
 from dataflow.utils.storage import FileStorage
 
 class GPT_generator():
@@ -12,7 +12,7 @@ class GPT_generator():
         )
         self.model_cache_dir = './dataflow_cache'
         self.llm_serving = APILLMServing_request(
-                api_url="http://123.129.219.111:3000/v1/chat/completions",
+                api_url="https://api.openai.com/v1/chat/completions",
                 model_name="gpt-4o",
                 max_workers=2
         )
